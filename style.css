@@ -1,0 +1,250 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #fff;
+}
+
+html,body{
+    height: 100%;
+    perspective: 800px;
+    width: 100%;
+}
+#cursor{
+    height: 20px;
+    width: 20px;
+    background-color: #b9ee27;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+    transition: all linear 0.15s;
+}
+#cursor-blur{
+    height: 500px;
+    width: 500px;
+    background-color: rgba(150, 193, 30, 0.3);
+    border-radius: 50%;
+    position: fixed;
+    filter:blur(40px);
+    z-index: 99;
+    transition: all linear 0.4s;
+}
+#nav{
+    height: 145px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 120px;
+    gap: 50px;
+    justify-content: flex-start;
+    position: fixed;
+    z-index: 999;
+}
+#nav img{
+    height: 75px;
+}
+#nav h4{
+    text-transform: uppercase;
+    font-weight: 500;
+}
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+    position: fixed;
+}
+#main{
+    position: relative;
+    background-color: rgb(0,0,0,0.37);
+}
+
+#page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+#page1 h1{
+    font-size: 100px;
+    font-weight: 900;
+    position: relative;
+}
+#page1 h1::before{
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: black;
+    top: -4px;
+    left: -4px;
+    -webkit-text-stroke: 1px #b9ee27;
+    z-index: -1;
+}
+#page1 h2{
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+#page1 p{
+    font-size: 20px;
+    font-weight: 300;
+    width: 60%;
+}
+#page2{
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+#scroller{
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name:scroll;
+    animation-duration: 35s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#scroller h4{
+    display: inline-block;
+    font-size: 100px;
+    font-weight: 900;
+    margin-right: 10px;
+    color: transparent;
+    transition: all linear 0.2s;
+    -webkit-text-stroke: 2px #b9ee27;
+}
+#scroller h4:hover{
+    color: #b9ee27;
+}
+@keyframes scroll {
+    from{
+        transform: translate(0);
+    }
+    to{
+        transform: translate(-100%);
+    }
+}
+#about-us{
+    height: 44vh;
+    width: 100%;
+    display: flex;
+    padding: 0 50px;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    margin-bottom: 40px;
+}
+#about-us #first{
+    height: 130px;
+    width: 130px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+#about-us #second{
+    height: 190px;
+    width: 130px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+#about-us-in{
+    width: 50%;
+    text-align: center;
+}
+#about-us-in h3{
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+#about-us-in p{
+    font-size: 20px;
+    line-height: 30px;
+}
+#cards-container{
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+    z-index: 10;
+}
+.cards{
+    height: 90%;
+    width: 24%;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.6s;
+}
+#card1{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card2{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card3{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #b9ee27;
+    padding: 30px;
+    padding-top: 160px;
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+.overlay h4{
+    color: #000;
+    font-size: 40px;
+    /* white-space: nowrap; */
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+.overlay p{
+    color: #000;
+    font-size: 18px;
+}
+.cards:hover .overlay{
+    opacity: 1;
+}
+.cards:hover{
+    transform: rotate3d(-1,1,0,9deg);
+}
+#green-div{
+    height: 40vh;
+    display: flex;
+    background: linear-gradient(to left bottom, #51AC2B, #AADE23);
+    align-items: center;
+    margin-top: 40px;
+    justify-content: space-between;
+}
+#green-div h4{
+    width: 45%;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}
+#green-div img{
+    height: 100%;
+    object-fit: cover;
+    width: 14%;
+}
