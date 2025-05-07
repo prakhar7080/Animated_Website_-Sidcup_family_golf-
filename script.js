@@ -2,11 +2,11 @@ let cursor = document.querySelector("#cursor");
 let cursorBlur = document.querySelector("#cursor-blur");
 
 document.addEventListener("mousemove", function (e) {
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
+    cursor.style.left = e.clientX+"px";
+    cursor.style.top = e.clientY+"px";
 
-    cursorBlurblur.style.left = e.clientX + "px";
-    cursorBlur.style.top = e.clientY + "px";
+    cursorBlurblur.style.left = e.clientX+"px";
+    cursorBlur.style.top = e.clientY+"px";
 });
 
 
